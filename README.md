@@ -3,6 +3,10 @@
 &nbsp;
 &nbsp;
 
+![screen-shot-overview](./ingress-controller.png)
+
+![screen-shot-services](./all-services.png)
+
 ### 1. Enable K8s on Docker Desktop backed by WSL2
 
 &nbsp;
@@ -67,7 +71,7 @@ kubectl apply -f hello-world-ingress.yaml --namespace ingress-nginx
 &nbsp;
 &nbsp;
 
-EXTERNAL_IP is localhost
+EXTERNAL-IP is localhost
 
 &nbsp;
 &nbsp;
