@@ -11,21 +11,21 @@ spec:
   rules:
   - http:
       paths:
-      - path: /hello-world-one(/|$)(.*)
+      - path: /hello-world-one
         pathType: Prefix
         backend:
           service:
             name: aks-helloworld-one
             port:
               number: 80
-      - path: /hello-world-two(/|$)(.*)
+      - path: /hello-world-two
         pathType: Prefix
         backend:
           service:
             name: aks-helloworld-two
             port:
               number: 80
-      - path: /(.*)
+      - path: /
         pathType: Prefix
         backend:
           service:

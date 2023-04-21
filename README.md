@@ -1,24 +1,77 @@
-# 1. Install the NGINX Ingress controller
+# Enable K8s on Docker Desktop backed by WSL2
 
-## kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
+### 1. Install the NGINX Ingress controller
 
+&nbsp;
+&nbsp;
 
-# 2. Check the Ingress controller pod is running
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml
 
-## kubectl get pods --namespace ingress-nginx
+&nbsp;
+&nbsp;
 
-# 3. Check the NGINX Ingress controller has been assigned a public Ip address
+### 2. Check the Ingress controller pod is running
 
-## kubectl get service ingress-nginx-controller --namespace=ingress-nginx
+&nbsp;
+&nbsp;
 
-# 4. Set up two web apps
+kubectl get pods --namespace ingress-nginx
 
-## kubectl apply -f aks-helloworld-one.yaml --namespace ingress-nginx
+&nbsp;
+&nbsp;
 
-## kubectl apply -f aks-helloworld-two.yaml --namespace ingress-nginx
+### 3. Check the NGINX Ingress controller has been assigned a public Ip address
 
-# 5. Setup the Ingress to route traffic between the two apps
+&nbsp;
+&nbsp;
 
-## kubectl apply -f hello-world-ingress.yaml --namespace ingress-nginx
+kubectl get service ingress-nginx-controller --namespace=ingress-nginx
 
-# 6. Browse to the EXTERNAL_IP/hello-world-one and EXTERNAL_IP/hello-world-one
+&nbsp;
+&nbsp;
+
+### 4. Set up two web apps
+
+&nbsp;
+&nbsp;
+
+kubectl apply -f aks-helloworld-one.yaml --namespace ingress-nginx
+
+&nbsp;
+
+kubectl apply -f aks-helloworld-two.yaml --namespace ingress-nginx
+
+&nbsp;
+&nbsp;
+
+### 5. Setup the Ingress to route traffic between the two apps
+
+&nbsp;
+&nbsp;
+
+kubectl apply -f hello-world-ingress.yaml --namespace ingress-nginx
+
+&nbsp;
+&nbsp;
+
+### 6. Browse to the EXTERNAL-IP/hello-world-one and EXTERNAL-IP/hello-world-one
+
+&nbsp;
+&nbsp;
+
+EXTERNAL_IP is localhost
+
+&nbsp;
+&nbsp;
+
+![screen-shot-step-by-step](./command-prompt.png)
+
+&nbsp;
+&nbsp;
+
+![screen-shot-browser](./browser.png)
+
+&nbsp;
+&nbsp;
+
+![screen-shot-browser-2](./browser-2.png)
