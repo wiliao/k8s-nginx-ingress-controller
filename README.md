@@ -1,6 +1,14 @@
-# Enable K8s on Docker Desktop backed by WSL2
+## Set up Ingress on Docker Desktop with the NGINX Ingress Controller
 
-### 1. Install the NGINX Ingress controller
+&nbsp;
+&nbsp;
+
+### 1. Enable K8s on Docker Desktop backed by WSL2
+
+&nbsp;
+&nbsp;
+
+### 2. Install the NGINX Ingress controller
 
 &nbsp;
 &nbsp;
@@ -10,7 +18,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 &nbsp;
 &nbsp;
 
-### 2. Check the Ingress controller pod is running
+### 3. Check the Ingress controller pod is running
 
 &nbsp;
 &nbsp;
@@ -20,7 +28,7 @@ kubectl get pods --namespace ingress-nginx
 &nbsp;
 &nbsp;
 
-### 3. Check the NGINX Ingress controller has been assigned a public Ip address
+### 4. Check the NGINX Ingress controller has been assigned a public Ip address
 
 &nbsp;
 &nbsp;
@@ -30,7 +38,7 @@ kubectl get service ingress-nginx-controller --namespace=ingress-nginx
 &nbsp;
 &nbsp;
 
-### 4. Set up two web apps
+### 5. Set up two web apps
 
 &nbsp;
 &nbsp;
@@ -44,7 +52,7 @@ kubectl apply -f aks-helloworld-two.yaml --namespace ingress-nginx
 &nbsp;
 &nbsp;
 
-### 5. Setup the Ingress to route traffic between the two apps
+### 6. Setup the Ingress to route traffic between the two apps
 
 &nbsp;
 &nbsp;
@@ -54,7 +62,7 @@ kubectl apply -f hello-world-ingress.yaml --namespace ingress-nginx
 &nbsp;
 &nbsp;
 
-### 6. Browse to the EXTERNAL-IP/hello-world-one and EXTERNAL-IP/hello-world-one
+### 7. Browse to the EXTERNAL-IP/hello-world-one and EXTERNAL-IP/hello-world-one
 
 &nbsp;
 &nbsp;
