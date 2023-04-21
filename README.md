@@ -139,3 +139,5 @@ Browse to the admin UI to see the routes Traefik has mapped: http://localhost:80
 
 &nbsp;
 &nbsp;
+
+![screen-shot-browser-2](./traefix-dashboard.png)
