@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-kiamol
+  labels:
+    kiamol: ch15
+spec:
+  selector:
+    matchLabels:
+      app: hello-kiamol
+  template:
+    metadata:
+      labels:
+        app: hello-kiamol
+    spec:
+      hostNetwork: true
+      containers:
+        - name: web
+          image: kiamol/ch02-hello-kiamol
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"          
+          ports:
+            - containerPort: 80
+              name: http

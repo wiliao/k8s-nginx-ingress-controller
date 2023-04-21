@@ -71,7 +71,7 @@ kubectl apply -f hello-world-ingress.yaml --namespace ingress-nginx
 &nbsp;
 &nbsp;
 
-### 7. Browse to the EXTERNAL-IP/hello-world-one and EXTERNAL-IP/hello-world-one
+### 7. Browse to the EXTERNAL-IP/, EXTERNAL-IP/hello-world-one, and EXTERNAL-IP/hello-world-one
 
 &nbsp;
 &nbsp;
@@ -92,3 +92,21 @@ EXTERNAL-IP is localhost
 &nbsp;
 
 ![screen-shot-browser-2](./browser-2.png)
+
+### 8. Deploy another deployment/service and ingress resource and browse to EXTERNAL-IP/kiamol
+
+&nbsp;
+&nbsp;
+
+kubectl apply -f hello-kiamol/ --namespace ingress-nginx
+
+&nbsp;
+&nbsp;
+
+kubectl apply -f hello-kiamol/ingress/localhost.yaml --namespace ingress-nginx
+
+&nbsp;
+&nbsp;
+
+![screen-shot-browser-2](./another-ingress-for-kiamol.png)
+
