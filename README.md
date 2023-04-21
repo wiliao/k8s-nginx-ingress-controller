@@ -5,6 +5,15 @@
 
 ![screen-shot-overview](./ingress-controller.png)
 
+&nbsp;
+
+The separation between Ingress rules (objects) and the ingress controller makes it easy to compare different reverse proxy implementations and see which gives you the combination of features and usability you're happy with.
+&nbsp;
+
+Kubernetes does let you run multiple ingress controllers, and in a complex environment, you may do that to provide different sets of capabilities for different applications.
+
+&nbsp;
+
 ![screen-shot-services](./all-services.png)
 
 ### 1. Enable K8s on Docker Desktop backed by WSL2
