@@ -124,3 +124,18 @@ kubectl apply -f hello-kiamol/ingress/localhost.yaml --namespace ingress-nginx
 
 ![screen-shot-browser-2](./another-ingress-for-kiamol.png)
 
+
+### 9. Deploy Traefik as an additional ingress controller in the cluster
+
+&nbsp;
+&nbsp;
+
+kubectl apply -f ingress-traefik/
+
+&nbsp;
+&nbsp;
+
+Browse to the admin UI to see the routes Traefik has mapped: http://localhost:8080
+
+&nbsp;
+&nbsp;
