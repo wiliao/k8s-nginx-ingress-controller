@@ -12,6 +12,11 @@
 &nbsp;
 &nbsp;
 
+![screen-shot-services](./docker-desktop-k8s-settings.png)
+
+&nbsp;
+&nbsp;
+
 ### 2. Install the NGINX Ingress controller
 
 &nbsp;
