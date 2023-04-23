@@ -1,4 +1,4 @@
-## Set up Ingress on Docker Desktop with the NGINX Ingress Controller
+## Set up Ingress on Docker Desktop with Nginx and Kong Ingress Controller
 
 &nbsp;
 
