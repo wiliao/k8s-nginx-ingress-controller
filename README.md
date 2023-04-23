@@ -39,7 +39,7 @@ The followings are the result of setting up Nginx and Kong ingress controllers.
 
 &nbsp;
 
-To deploy and access the Kubernetes Dashboard, please refer to:
+### To deploy and access the Kubernetes Dashboard, please refer to:
 
 https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 
@@ -49,7 +49,7 @@ The yaml file for creating sample user is at k8s-dash-board folder.
 
 &nbsp;
 
-### Steps:
+### Steps to setup K8s Dashboard:
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 
