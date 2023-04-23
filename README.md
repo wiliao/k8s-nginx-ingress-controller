@@ -2,7 +2,7 @@
 
 &nbsp;
 
-The following diagram (from <<Learn K8s in a month of Lunches>>) is for illustration purpose only.
+The following diagram (from <\<Learn K8s in a month of Lunches\>>) is for illustration purpose only.
 
 &nbsp;
 
