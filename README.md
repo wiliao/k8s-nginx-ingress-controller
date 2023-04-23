@@ -27,6 +27,9 @@ The followings are the result of setting up Nginx and Kong ingress controllers.
 
 ![screen-shot-all-ingresses](screen-shot/all-ingresses.png)
 
+&nbsp;
+&nbsp;
+
 ### 1. Enable K8s on Docker Desktop backed by WSL2
 
 &nbsp;
@@ -43,6 +46,21 @@ https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
 
 The yaml file for creating sample user is at k8s-dash-board folder.
+
+&nbsp;
+
+### Steps:
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+kubectl apply -f dashboard-adminuser.yaml
+
+kubectl -n kubernetes-dashboard create token admin-user
+
+kubectl proxy
+
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
 
 &nbsp;
 
@@ -95,7 +113,7 @@ kubectl apply -f aks-helloworld-two.yaml --namespace ingress-nginx
 &nbsp;
 &nbsp;
 
-### 6. Setup the Ingress to route traffic between the two apps
+### 6. Setup the Ingress to route traffic to the two apps
 
 &nbsp;
 &nbsp;
