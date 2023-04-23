@@ -2,11 +2,11 @@
 
 &nbsp;
 
-The following is for illustration purpose only:
+The following diagram (from <<Learn K8s in a month of Lunches>>) is for illustration purpose only.
 
 &nbsp;
 
-![screen-shot-overview](./ingress-controller.png)
+![screen-shot-overview](screen-shot/ingress-controller.png)
 
 &nbsp;
 
@@ -21,18 +21,18 @@ The followings are the result of setting up Nginx and Kong ingress controllers.
 
 &nbsp;
 
-![screen-shot-all-deployments](./all-deployments.png)
+![screen-shot-all-deployments](screen-shot/all-deployments.png)
 
-![screen-shot-all-services](./all-services.png)
+![screen-shot-all-services](screen-shot/all-services.png)
 
-![screen-shot-all-ingresses](./all-ingresses.png)
+![screen-shot-all-ingresses](screen-shot/all-ingresses.png)
 
 ### 1. Enable K8s on Docker Desktop backed by WSL2
 
 &nbsp;
 &nbsp;
 
-![screen-shot-k8s-settings](./docker-desktop-k8s-settings.png)
+![screen-shot-k8s-settings](screen-shot/docker-desktop-k8s-settings.png)
 
 &nbsp;
 
@@ -51,7 +51,7 @@ The yaml file for creating sample user is at k8s-dash-board folder.
 &nbsp;
 &nbsp;
 
-check out the latest version here: https://github.com/kubernetes/ingress-nginx
+Check out the latest version here: https://github.com/kubernetes/ingress-nginx
 
 &nbsp;
 &nbsp;
@@ -115,17 +115,17 @@ EXTERNAL-IP is localhost
 &nbsp;
 &nbsp;
 
-![screen-shot-step-by-step](./command-prompt.png)
+![screen-shot-step-by-step](screen-shot/command-prompt.png)
 
 &nbsp;
 &nbsp;
 
-![screen-shot-browser](./browser.png)
+![screen-shot-browser](screen-shot/browser.png)
 
 &nbsp;
 &nbsp;
 
-![screen-shot-browser-2](./browser-2.png)
+![screen-shot-browser-2](screen-shot/browser-2.png)
 
 ### 8. Deploy another deployment/service and ingress resource and browse to EXTERNAL-IP/kiamol
 
@@ -142,7 +142,7 @@ kubectl apply -f hello-kiamol/ingress/localhost.yaml --namespace ingress-nginx
 &nbsp;
 &nbsp;
 
-![screen-shot-ingress-2](./another-ingress-for-kiamol.png)
+![screen-shot-ingress-2](screen-shot/another-ingress-for-kiamol.png)
 
 
 ### 9. Deploy Kong as an additional ingress controller in the cluster
@@ -160,7 +160,7 @@ kubectl create -f all-in-one-dbless.yaml
 
 ### Testing connectivity to Kong Ingress Controller
 
-![screen-shot-kong-no-route](./kong-no-route.png)
+![screen-shot-kong-no-route](screen-shot/kong-no-route.png)
 
 This is expected since Kong Ingress Controller doesn’t know how to proxy the request yet.
 
@@ -186,7 +186,7 @@ kubectl apply -f echo-ingress.yaml
 
 &nbsp;
 
-![screen-shot-kong-route](./kong-echo-result.png)
+![screen-shot-kong-route](screen-shot/kong-echo-result.png)
 
 &nbsp;
 
@@ -194,7 +194,7 @@ kubectl apply -f echo-ingress.yaml
 
 &nbsp;
 
-![screen-shot-etc-hosts](./etc-hosts.png)
+![screen-shot-etc-hosts](screen-shot/etc-hosts.png)
 
 &nbsp;
 
@@ -202,6 +202,6 @@ kubectl apply -f echo-ingress.yaml
 
 &nbsp;
 
-![screen-shot-messed-up](./messed-up.png)
+![screen-shot-messed-up](screen-shot/messed-up.png)
 
 &nbsp;
