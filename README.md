@@ -1,6 +1,9 @@
 ## Set up Ingress on Docker Desktop with the NGINX Ingress Controller
 
 &nbsp;
+
+The following is for illustration purpose only:
+
 &nbsp;
 
 ![screen-shot-overview](./ingress-controller.png)
@@ -14,16 +17,33 @@ Kubernetes does let you run multiple ingress controllers, and in a complex envir
 
 &nbsp;
 
-![screen-shot-services](./all-services.png)
+The followings are the result of setting up Nginx and Kong ingress controllers.
+
+&nbsp;
+
+![screen-shot-all-deployments](./all-deployments.png)
+
+![screen-shot-all-services](./all-services.png)
+
+![screen-shot-all-ingresses](./all-ingresses.png)
 
 ### 1. Enable K8s on Docker Desktop backed by WSL2
 
 &nbsp;
 &nbsp;
 
-![screen-shot-services](./docker-desktop-k8s-settings.png)
+![screen-shot-k8s-settings](./docker-desktop-k8s-settings.png)
 
 &nbsp;
+
+To deploy and access the Kubernetes Dashboard, please refer to:
+
+https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+
+https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+
+The yaml file for creating sample user is at k8s-dash-board folder.
+
 &nbsp;
 
 ### 2. Install the NGINX Ingress controller
@@ -122,22 +142,66 @@ kubectl apply -f hello-kiamol/ingress/localhost.yaml --namespace ingress-nginx
 &nbsp;
 &nbsp;
 
-![screen-shot-browser-2](./another-ingress-for-kiamol.png)
+![screen-shot-ingress-2](./another-ingress-for-kiamol.png)
 
 
-### 9. Deploy Traefik as an additional ingress controller in the cluster
+### 9. Deploy Kong as an additional ingress controller in the cluster
+
+&nbsp;
+
+Adapted from Kong Ingress on Minikube (https://docs.konghq.com/kubernetes-ingress-controller/2.9.x/deployment/minikube). The kong-proxy port was changed from 80 to 8000.
+
+&nbsp;
+
+kubectl create -f all-in-one-dbless.yaml
 
 &nbsp;
 &nbsp;
 
-kubectl apply -f ingress-traefik/
+### Testing connectivity to Kong Ingress Controller
+
+![screen-shot-kong-no-route](./kong-no-route.png)
+
+This is expected since Kong Ingress Controller doesn’t know how to proxy the request yet.
 
 &nbsp;
+
+### Deploy an upstream HTTP application
+
 &nbsp;
 
-Browse to the admin UI to see the routes Traefik has mapped: http://localhost:8080
+kubectl apply -f echo-server.yaml
 
 &nbsp;
+
+### Create routing configuration to proxy /echo requests to the echo server:
+
 &nbsp;
 
-![screen-shot-browser-2](./traefix-dashboard.png)
+kubectl apply -f echo-ingress.yaml
+
+&nbsp;
+
+### Test the routing rule:
+
+&nbsp;
+
+![screen-shot-kong-route](./kong-echo-result.png)
+
+&nbsp;
+
+### Please note that C:\Windows\System32\Drivers\etc\hosts file was updated as below:
+
+&nbsp;
+
+![screen-shot-etc-hosts](./etc-hosts.png)
+
+&nbsp;
+
+### Route mapping might be messed up like this:
+
+&nbsp;
+
+![screen-shot-messed-up](./messed-up.png)
+
+&nbsp;
