@@ -61,6 +61,19 @@ kubectl proxy
 
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
+&nbsp;
+
+### Notes:
+For cluster setup by kubeadm, enable port 8443 and 443 and then get token and port forward.
+
+    sudo ufw allow 443
+    sudo ufw allow 443/tcp
+    sudo ufw allow 8443
+    sudo ufw allow 8443/tcp
+    kubectl -n kubernetes-dashboard create token admin-user
+    kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard 8080:443
+
+Access dashboard from https://localhost:8080 
 
 &nbsp;
 
