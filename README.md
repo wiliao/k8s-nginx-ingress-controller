@@ -53,7 +53,7 @@ The yaml file for creating sample user is at k8s-dash-board folder.
 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 
-kubectl apply -f dashboard-adminuser.yaml
+kubectl apply -f k8s-dash-board/dashboard-adminuser.yaml
 
 kubectl -n kubernetes-dashboard create token admin-user
 
