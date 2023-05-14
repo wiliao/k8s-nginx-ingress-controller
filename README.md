@@ -237,4 +237,4 @@ kubectl apply -f echo-ingress.yaml
 
 &nbsp;
 
-Kubernetes supports multiple Ingress controllers running in a single cluster.They’ll be exposed as LoadBalancer/Nodeport Services, so in production, you might have different IP addresses for different ingress controllers, and you’ll need to map domains to Ingress in your DNS configuration.
+Kubernetes supports multiple Ingress controllers running in a single cluster.They’ll be exposed as LoadBalancer/Nodeport Services, so in production, you might have different IP addresses for different ingress controllers, and you’ll need to map domains to Ingress in your DNS configuration. So the trouble will really start if you use different implementations and have to manage sets of Ingress rules with incompatible feature sets invoked through incomprehensible annotations.
